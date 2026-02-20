@@ -7,14 +7,18 @@ requires-python = ">=3.14"
 dependencies = [
     "langchain-core>=1.2.7",
     "langchain-ollama>=1.0.1",
+    "langchain-openai>=1.1.10",
     "langchain>=1.2.10",
+    "langchain-community>=0.4.1",
+    "langgraph>=1.0.8",
+    "langgraph-checkpoint-sqlite>=3.0.3",
+    "langsmith>=0.7.3",
     "ollama>=0.6.1",
     "pydantic>=2.12.5",
     "pydantic-core>=2.41.5",
     "requests>=2.32.5",
     "urllib3>=2.6.3",
     "uuid-utils>=0.14.0",
-    "langgraph>=1.0.8",
     "gradio>=6.5.1",
-    "langchain-community>=0.4.1"
+    "python-dotenv>=1.2.1"
 ]
