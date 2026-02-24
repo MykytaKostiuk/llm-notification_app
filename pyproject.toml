@@ -20,5 +20,6 @@ dependencies = [
     "urllib3>=2.6.3",
     "uuid-utils>=0.14.0",
     "gradio>=6.5.1",
-    "python-dotenv>=1.2.1"
+    "python-dotenv>=1.2.1",
+    "langgraph-dynamodb-checkpoint>=0.2.6.4"
 ]
