@@ -12,7 +12,8 @@ from pydantic import (
 from langgraph.graph import StateGraph, START
 from agents.state.agent_state import AgentState
 from agents.tools import tools_provider
-
+from agents.state.chekpointing.sql_lite_cp import sql_memory
+from agents.state.chekpointing.dynamo_cp import dynamo_saver
 
 class GraphDefinition:
 
@@ -34,8 +35,9 @@ class GraphDefinition:
     graph_builder.add_edge("tools", "chatbot")
     graph_builder.add_edge(START, "chatbot")
 
-    graph = graph_builder.compile()
+    graph = graph_builder.compile(checkpointer=dynamo_saver)
     graph.get_graph().draw_mermaid_png(output_file_path="graph.png")
+    
     return graph
 
   def chatbot(self, llm: Runnable[LanguageModelInput, AIMessage]):

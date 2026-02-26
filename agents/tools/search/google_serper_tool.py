@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 class SearchInput(BaseModel):
   query: str = Field(description="The search request query")
 
-@tool(name_or_callable='send_push_notification',
+@tool(name_or_callable='web_search',
       description='Useful for when you need more information from an online search',
       args_schema=SearchInput)
 def tool_search(query: str) -> str:
